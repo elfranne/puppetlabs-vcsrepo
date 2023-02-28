@@ -215,7 +215,8 @@ describe 'clones a remote repo' do
   context 'with with an owner' do
     pp = <<-MANIFEST
     user { 'vagrant':
-      ensure => present,
+      ensure   => present,
+      password => '!"§$%&/()asdfg',
     }
     MANIFEST
 
@@ -359,8 +360,9 @@ describe 'clones a remote repo' do
         ensure => present,
       }
       user { 'testuser':
-        ensure => present,
-        groups => 'testuser',
+        ensure   => present,
+        groups   => 'testuser',
+        password => '!"§$%&/()asdfg',
       }
       MANIFEST
 
